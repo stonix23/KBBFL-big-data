@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<league id="20641" name="KBBFL" rosterSize="16" injuredReserve="30" taxiSquad="2" rostersPerPlayer="1" playerLimitUnit="LEAGUE" startWeek="1" endWeek="17" lastRegularSeasonWeek="17" precision="0" h2h="YES" currentWaiverType="BBID" maxWaiverRounds="4" lockout="No" nflPoolStartWeek="1" standingsSort="PCT,DIVPCT,H2H,PTS," nflPoolType="Confidence" minBid="1" bbidSeasonLimit="200" mobileAlerts="" includeIRWithSalary="100" nflPoolEndWeek="17" bestLineup="No" survivorPool="Yes" usesContractYear="0" bbidConditional="No" salaryCapAmount="500" survivorPoolStartWeek="1" survivorPoolEndWeek="17" usesSalaries="1" bidIncrement="1" baseURL="http://www59.myfantasyleague.com" loadRosters="live_auction">
+  <starters count="0-8" idp_starters="">
+    <position name="QB" limit="0-1" />
+    <position name="RB" limit="0-2" />
+    <position name="WR" limit="0-2" />
+    <position name="TE" limit="0-1" />
+    <position name="PK" limit="0-1" />
+    <position name="Def" limit="0-1" />
+  </starters>
+  <divisions count="4">
+    <division id="00" name="Central" />
+    <division id="01" name="East Division" />
+    <division id="02" name="West" />
+    <division id="03" name="South" />
+  </divisions>
+  <franchises count="17">
+    <franchise icon="http://49.media.tumblr.com/097ae73f036e3c5d06e3cd4817a76476/tumblr_nj4jg0Xu3Z1ry4nh5o1_500.gif" use_skin="1004" division="00" day_phone="562-477-5120" waiverSortOrder="5" auctionStartAmount="70" email="kenton.boyer@gmail.com" bbidAvailableBalance="0.00" salaryCapAmount="" id="0001" play_audio="Yes" owner_name="Kenton Boyer" stadium="The Field of Broken Dreams" mail_event="none" country="US" abbrev="PRO" name="Provo Loan Sharks" mail_type="html" logo="http://kbbfl1.football.cbssports.com/images/team-logo/1-72x72.jpg" time_zone="ET" />
+    <franchise icon="http://www59.myfantasyleague.com/fflnetdynamic2017/20641_franchise_icon0002.jpg" use_skin="1036" division="02" day_phone="423-416-7786" waiverSortOrder="12" auctionStartAmount="375" email="snaxguy@aol.com" bbidAvailableBalance="2.00" salaryCapAmount="" id="0002" play_audio="Yes" owner_name="Bob Boyer" mail_event="none" country="US" abbrev="HON" name="Honolulu Hoodlums" mail_type="html" logo="http://www59.myfantasyleague.com/fflnetdynamic2017/20641_franchise_logo0002.jpg" time_zone="ET" />
+    <franchise icon="http://4.bp.blogspot.com/-ee7WyKY89QI/UBRCYdtm6EI/AAAAAAAACDk/k_wxnQWM2lU/s1600/Dynomite.JPG" division="02" day_phone="614-327-7260" waiverSortOrder="17" auctionStartAmount="135" email="danswartwout@frontier.com" bbidAvailableBalance="3.00" salaryCapAmount="" id="0003" play_audio="Yes" owner_name="Dan Swartwout" mail_event="none" country="US" abbrev="DET" name="Detroit Dy-No-Mite" mail_type="html" logo="http://kbbfl1.football.cbssports.com/images/team-logo/11-72x72.jpg" time_zone="ET" />
+    <franchise icon="http://www53.myfantasyleague.com/fflnetdynamic2013/50679_franchise_icon0004.jpg" use_skin="1018" division="03" day_phone="317-753-5493" waiverSortOrder="13" auctionStartAmount="238" email="mbeer@outlook.com" bbidAvailableBalance="0.00" salaryCapAmount="" id="0004" play_audio="Yes" owner_name="Mike Beer" cell="3177535493" stadium="Penis Park" mail_event="LINEUP,LREMINDER,TRADE,TBAIT,WAIVER,IR,TAXI,RESULT,POLL,MSG_BOARD,ARTICLE,PLAYER_NEWS," country="US" abbrev="IND" name="Indianapolis Impotence" mail_type="html" logo="http://www53.myfantasyleague.com/fflnetdynamic2013/50679_franchise_logo0004.jpg" time_zone="ET" />
+    <franchise icon="http://www59.myfantasyleague.com/fflnetdynamic2018/20641_franchise_icon0005.png" division="03" day_phone="971-336-0218" waiverSortOrder="9" auctionStartAmount="185" email="jason.harkless@gmail.com" bbidAvailableBalance="0.00" salaryCapAmount="" id="0005" play_audio="Yes" owner_name="Jason Harkless" mail_event="LINEUP,TRADE,TBAIT,WAIVER,IR,TAXI,RESULT,POLL,MSG_BOARD,ARTICLE," country="US" abbrev="POR" name="Portland Potheads" mail_type="html" logo="http://kbbfl1.football.cbssports.com/images/team-logo/jharkless-panhandler1-72x72.jpg" time_zone="PT" />
+    <franchise icon="http://www59.myfantasyleague.com/fflnetdynamic2016/20641_franchise_icon0006.jpg" use_skin="1037" division="03" day_phone="480-399-2183" waiverSortOrder="11" auctionStartAmount="145" email="rob.umberger@gmail.com" bbidAvailableBalance="1.00" salaryCapAmount="" id="0006" play_audio="Yes" owner_name="Rob Umberger" mail_event="LINEUP,TRADE,TBAIT,WAIVER,IR,TAXI,RESULT,POLL,MSG_BOARD,ARTICLE," country="US" abbrev="LVH" name="Phoenix Sand Weasels" mail_type="html" logo="http://kbbfl1.football.cbssports.com/images/team-logo/robble74-hustlers07resize-72x72.jpg" time_zone="ET" />
+    <franchise icon="https://folsoms93.files.wordpress.com/2011/01/dsc03188.jpg" use_skin="1024" division="02" day_phone="916-983-1488" waiverSortOrder="4" auctionStartAmount="207" email="mdstoner23@yahoo.com" bbidAvailableBalance="0.00" salaryCapAmount="" id="0007" play_audio="Yes" owner_name="Mike Stoner" mail_event="TRADE,WAIVER,IR,TAXI,POLL,MSG_BOARD,ARTICLE," country="US" abbrev="FOL" name="Folsom Felons" mail_type="html" username="mdstoner" logo="http://kbbfl1.football.cbssports.com/images/team-logo/mdstoner-felonslogo-72x72.jpg" time_zone="ET" use_advanced_editor="Yes" />
+    <franchise icon="http://www59.myfantasyleague.com/fflnetdynamic2017/20641_franchise_icon0008.jpg" use_skin="1024" division="03" waiverSortOrder="8" auctionStartAmount="30" email="joefwa@gmail.com" bbidAvailableBalance="0.00" salaryCapAmount="" id="0008" play_audio="Yes" owner_name="Joe Lee" mail_event="DRAFT,ONTHECLOCK,AUCTION,LINEUP,LREMINDER,TRADE,TBAIT,WAIVER,IR,TAXI,RESULT,INJURY,POLL,MSG_BOARD,ARTICLE,PLAYER_NEWS,MFL_NEWS,PROMO_MESSAGES," country="US" abbrev="SJC" name="San Jose Goldfish" mail_type="html" logo="http://www59.myfantasyleague.com/fflnetdynamic2017/20641_franchise_logo0008.jpg" time_zone="ET" />
+    <franchise icon="http://pestcemetery.com/wp-content/uploads/2009/03/fogging-bomb.jpg" use_skin="1021" division="00" day_phone="614-562-3041" waiverSortOrder="15" auctionStartAmount="227" email="mcaldwel@columbus.rr.com" bbidAvailableBalance="28.00" salaryCapAmount="" id="0009" play_audio="Yes" owner_name="Mike Caldwell" stadium="The Bomb Shelter" mail_event="none" country="US" abbrev="CBUS" name="Columbus Bombs" mail_type="html" logo="http://kbbfl1.football.cbssports.com/images/team-logo/osueq1-dennis-rodman--9679-72x72.jpg" time_zone="ET" />
+    <franchise icon="http://www59.myfantasyleague.com/fflnetdynamic2016/20641_franchise_icon0010.jpg" division="00" day_phone="937-776-2046" waiverSortOrder="14" auctionStartAmount="360" email="scottebosak@gmail.com" bbidAvailableBalance="0.00" salaryCapAmount="" id="0010" play_audio="Yes" owner_name="Scott Bosak" mail_event="LINEUP,TRADE,TBAIT,WAIVER,IR,TAXI,RESULT,POLL,MSG_BOARD,ARTICLE," country="US" abbrev="YOS" name="Yosemite Evil Squirrels" mail_type="html" logo="http://kbbfl1.football.cbssports.com/images/team-logo/sebosak-myteamlogo-72x72.jpg" time_zone="ET" />
+    <franchise icon="http://www59.myfantasyleague.com/fflnetdynamic2017/20641_franchise_icon0011.jpg" use_skin="1009" division="00" day_phone="260-438-2370" waiverSortOrder="10" auctionStartAmount="310" email="mtm218@msn.com" bbidAvailableBalance="0.00" url="https://youtu.be/a91sWzn9TC8" salaryCapAmount="" id="0011" play_audio="Yes" owner_name="Ted McClure" mail_event="LINEUP,TRADE,TBAIT,WAIVER,IR,TAXI,RESULT,POLL,MSG_BOARD,ARTICLE," country="US" abbrev="HAR" name="Harlem Eskimo Brothers" mail_type="html" logo="http://www59.myfantasyleague.com/fflnetdynamic2017/20641_franchise_logo0011.jpg" time_zone="ET" />
+    <franchise icon="http://www53.myfantasyleague.com/fflnetdynamic2013/50679_franchise_icon0012.jpg" use_skin="1024" division="01" day_phone="260-918-RENT (7368)" waiverSortOrder="7" auctionStartAmount="153" email="anderson1170@msn.com" bbidAvailableBalance="2.00" url="http://www.918rent.com" salaryCapAmount="" id="0012" play_audio="Yes" owner_name="Mike Anderson" mail_event="LINEUP,TRADE,TBAIT,WAIVER,IR,TAXI,RESULT,POLL,MSG_BOARD,ARTICLE," country="US" abbrev="MIA" name="Miami Chomp" mail_type="html" logo="http://kbbfl1.football.cbssports.com/images/team-logo/mbandy1-don_ttreadonme-72x72.gif" time_zone="ET" />
+    <franchise icon="http://www59.myfantasyleague.com/fflnetdynamic2014/11851_franchise_logo0013.jpg" use_skin="1014" division="01" day_phone="423-502-2850" waiverSortOrder="6" auctionStartAmount="200" email="bigboyz1@aol.com" bbidAvailableBalance="50.00" salaryCapAmount="" id="0013" play_audio="Yes" owner_name="Michael Boyer" cell="423-502-2850" stadium="AZAR STADIUM" mail_event="none" country="US" abbrev="BOS" name="BOSTON BIG BOYZ" mail_type="html" logo="http://www59.myfantasyleague.com/fflnetdynamic2014/11851_franchise_logo0013.jpg" time_zone="ET" />
+    <franchise icon="http://ecx.images-amazon.com/images/I/41hCP3%2BjXJL.jpg" use_skin="1038" division="01" day_phone="309-397-7520" waiverSortOrder="2" auctionStartAmount="170" email="alcenius@comcast.net" bbidAvailableBalance="0.00" salaryCapAmount="" id="0014" play_audio="Yes" owner_name="Tim Alcenius" mail_event="LINEUP,TRADE,TBAIT,WAIVER,IR,TAXI,RESULT,POLL,MSG_BOARD,ARTICLE," country="US" abbrev="WAS" name="Washington Warbirds" mail_type="html" logo="http://kbbfl1.football.cbssports.com/images/team-logo/alcenius-bottle_splash-72x72.jpg" time_zone="CT" />
+    <franchise icon="https://upload.wikimedia.org/wikipedia/commons/4/49/Stomp.gif" use_skin="1024" division="01" day_phone="630-400-0882" waiverSortOrder="16" auctionStartAmount="205" email="s@chatterjea.com" bbidAvailableBalance="2.00" salaryCapAmount="" id="0015" play_audio="No" owner_name="Shu" mail_event="LINEUP,TRADE,TBAIT,WAIVER,IR,TAXI,RESULT,POLL,MSG_BOARD,ARTICLE," country="US" abbrev="FTW" name="Fort Wayne Stomp" mail_type="html" logo="http://upload.wikimedia.org/wikipedia/commons/4/49/Stomp.gif" time_zone="ET" />
+    <franchise icon="http://bbqdesert.com/wp-content/uploads/2014/09/Harry-Caray-Holy-Cow.gif" use_skin="1024" division="02" day_phone="817-676-3358" waiverSortOrder="3" auctionStartAmount="190" email="deepchowdhury@yahoo.com" bbidAvailableBalance="0.00" url="http://www59.myfantasyleague.com/2017/options?L=20641&amp;F=0016&amp;O=07" salaryCapAmount="" id="0016" play_audio="Yes" owner_name="Deep Chowdhury" sound="http://www59.myfantasyleague.com/fflnetdynamic2017/20641_franchise_sound0016.mp3" mail_event="LINEUP,TRADE,TBAIT,WAIVER,IR,TAXI,RESULT,POLL,MSG_BOARD,ARTICLE," country="US" abbrev="CAL" name="Calcutta Holy Cows" mail_type="html" logo="http://bbqdesert.com/wp-content/uploads/2014/09/Harry-Caray-Holy-Cow.gif" time_zone="ET" />
+    <franchise division="00" waiverSortOrder="1" email="kmbhurricanes@gmail.com" bbidAvailableBalance="151.00" salaryCapAmount="" id="0017" owner_name="Kevin the FINEMEISTER" mail_event="TAXI,IR,DRAFT,MFL_NEWS,ONTHECLOCK,LINEUP,RESULT,TRADE,PROMO_MESSAGES,WAIVER,TBAIT," name="Special Counsels Office" mail_type="html" />
+  </franchises>
+  <history>
+    <league year="2018" url="http://www59.myfantasyleague.com/2018/home/20641" />
+    <league year="1990" url="http://www67.myfantasyleague.com/1990/home/67586" />
+    <league year="1991" url="http://www67.myfantasyleague.com/1991/home/67975?COMPLETED=1" />
+    <league year="1992" url="http://www67.myfantasyleague.com/1992/home/69485?COMPLETED=1" />
+    <league year="1993" url="http://www67.myfantasyleague.com/1993/home/54364?COMPLETED=1" />
+    <league year="1994" url="http://www67.myfantasyleague.com/1994/home/52698?COMPLETED=1" />
+    <league year="1995" url="http://www67.myfantasyleague.com/1995/home/69372?COMPLETED=1" />
+    <league year="1996" url="http://www67.myfantasyleague.com/1996/home/71961?COMPLETED=1" />
+    <league year="1997" url="http://www67.myfantasyleague.com/1997/home/77575?COMPLETED=1" />
+    <league year="1998" url="http://www67.myfantasyleague.com/1998/home/52966?COMPLETED=1" />
+    <league year="1999" url="http://www67.myfantasyleague.com/1999/home/66464?COMPLETED=1" />
+    <league year="2000" url="http://www98.myfantasyleague.com/2000/home/73912" />
+    <league year="2001" url="http://www98.myfantasyleague.com/2001/home/63093" />
+    <league year="2002" url="http://www98.myfantasyleague.com/2002/home/63619" />
+    <league year="2003" url="http://www98.myfantasyleague.com/2003/home/75954" />
+    <league year="2004" url="http://www98.myfantasyleague.com/2004/home/66140" />
+    <league year="2005" url="http://www98.myfantasyleague.com/2005/home/55131" />
+    <league year="2006" url="http://www98.myfantasyleague.com/2006/home/63003" />
+    <league year="2007" url="http://www98.myfantasyleague.com/2007/home/53429" />
+    <league year="2008" url="http://www98.myfantasyleague.com/2008/home/71188" />
+    <league year="2009" url="http://www98.myfantasyleague.com/2009/home/52867" />
+    <league year="2010" url="http://www74.myfantasyleague.com/2010/home/72670" />
+    <league year="2011" url="http://www71.myfantasyleague.com/2011/home/68482" />
+    <league year="2012" url="http://www67.myfantasyleague.com/2012/home/61305" />
+    <league year="2013" url="http://www53.myfantasyleague.com/2013/home/50679" />
+    <league year="2014" url="http://www59.myfantasyleague.com/2014/home/11851" />
+    <league year="2015" url="http://www59.myfantasyleague.com/2015/home/25852" />
+    <league year="2016" url="http://www59.myfantasyleague.com/2016/home/20641" />
+    <league year="2017" url="http://www59.myfantasyleague.com/2017/home/20641" />
+    <league year="2019" url="http://www59.myfantasyleague.com/2019/home/20641" />
+  </history>
+</league>
