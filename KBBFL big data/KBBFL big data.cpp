@@ -31,7 +31,7 @@ int main()
 
     string leagueInfoString;
 
-    ofstream leagueFile("C:\\stonixProjects\\KBBFL big data\\KBBFL info.xml", std::ofstream::out);
+    ofstream leagueFile("C:\\KBBFL big data\\KBBFL info.xml", std::ofstream::out);
 
     mflDataSession->mflRequest(leagueInfoString, 2018, L"league", L"");
 
@@ -44,7 +44,7 @@ int main()
         string resultsString, playersString;
         cout << "Procuring player list for KBBFL season " << year << endl;
 
-        ofstream playersFile("C:\\stonixProjects\\KBBFL big data\\players_" + to_string(year) + ".xml", std::ofstream::out);
+        ofstream playersFile("C:\\KBBFL big data\\players_" + to_string(year) + ".xml", std::ofstream::out);
 
         mflDataSession->mflRequest(playersString, year, L"players", L"");
         playersFile << playersString;
@@ -52,7 +52,7 @@ int main()
         playersString.clear();
         playersFile.close();
 
-        ofstream resultsFile("C:\\stonixProjects\\KBBFL big data\\weeklyResults_" + to_string(year) + ".xml", std::ofstream::out);
+        ofstream resultsFile("C:\\KBBFL big data\\weeklyResults_" + to_string(year) + ".xml", std::ofstream::out);
 
         cout << "Procuring results for KBBFL season " << year << endl;
 
@@ -120,9 +120,7 @@ void loadFranchiseInfo(franchiseData** franchiseDirectory, unordered_map<string,
     // Make map of franchise info
 
     pugi::xml_document leagueInfoXML;
-    resultXML = leagueInfoXML.load_file(string("C:\\stonixProjects\\KBBFL big data\\KBBFL info.xml").data());
-
-    //    resultXML = playersXMLFile.load_file(string("C:\\stonixProjects\\KBBFL big data\\players_" + to_string(year) + ".xml").data());
+    resultXML = leagueInfoXML.load_file(string("C:\\KBBFL big data\\KBBFL info.xml").data());
 
     pugi::xml_node franchiseNode = leagueInfoXML.first_child().find_child_by_attribute("count", "17");
 
@@ -153,7 +151,7 @@ void loadWeeklyResults(franchiseData** franchiseDirectory, unordered_map<DWORD, 
     {
         // Create player database for year
         pugi::xml_document playersXMLFile;
-        resultXML = playersXMLFile.load_file(string("C:\\stonixProjects\\KBBFL big data\\players_" + to_string(year) + ".xml").data());
+        resultXML = playersXMLFile.load_file(string("C:\\KBBFL big data\\players_" + to_string(year) + ".xml").data());
 
         for (pugi::xml_node itNode = playersXMLFile.first_child().first_child(); itNode; itNode = itNode.next_sibling())
         {
@@ -178,7 +176,7 @@ void loadWeeklyResults(franchiseData** franchiseDirectory, unordered_map<DWORD, 
 
         // Process weekly results for year
         pugi::xml_document resultsXMLFile;
-        resultXML = resultsXMLFile.load_file(string("C:\\stonixProjects\\KBBFL big data\\weeklyResults_" + to_string(year) + ".xml").data());
+        resultXML = resultsXMLFile.load_file(string("C:\\KBBFL big data\\weeklyResults_" + to_string(year) + ".xml").data());
 
         for (int week = 1; week <= 14; week++)
         {
