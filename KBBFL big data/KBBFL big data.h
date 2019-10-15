@@ -103,8 +103,8 @@ struct franchiseData
     DWORD teamLosses;
     DWORD teamTies;
 
-    DWORD shouldntStarts;
-    DWORD timesWrong;
+    DWORD kickerLeadingScorer;
+    tuple<DWORD, DWORD, DWORD, BYTE> bestKickerScore;   // <maxScore, maxPlayerID, year, week>
 
     multimap<DWORD, tuple<DWORD, DWORD, BYTE>> leadingBenchScorers;     // multimap<maxScore, tuple<maxPlayerID, year, week>>
 

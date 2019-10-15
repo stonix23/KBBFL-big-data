@@ -13,12 +13,21 @@
 
 void loadFranchiseInfo(franchiseData** franchiseDirectory, unordered_map<string, int> &franchiseMap);
 
-void loadWeeklyResults(franchiseData** franchiseDirectory, unordered_map<DWORD, pair<string, Position>> &playerMap);
+void loadWeeklyResults(franchiseData** franchiseDirectory, unordered_map<DWORD, pair<string, Position>> &playerMap,
+                        multimap<DWORD, tuple<DWORD, DWORD, DWORD, BYTE>> &leadingScorers);
+
 
 void generateTeamReport(franchiseData* franchiseDirectory, unordered_map<DWORD, pair<string, Position>> &playerMap);
 
 void generateRankings(franchiseData** franchiseDirectory, unordered_map<DWORD, pair<string, Position>> &playerMap);
 
+void generateHighestPlayerScores(franchiseData** franchiseDirectory, unordered_map<DWORD, pair<string, Position>> &playerMap,
+                                    multimap<DWORD, tuple<DWORD, DWORD, DWORD, BYTE>> &leadingScorers);
+
+void generateKickerScoring(franchiseData** franchiseDirectory, unordered_map<DWORD, pair<string, Position>> &playerMap);
+
+
+using namespace std;
 
 int main()
 {
@@ -83,17 +92,23 @@ int main()
     franchiseData* franchiseDirectory[17];
     unordered_map<string, int> franchiseMap;
 
+    multimap<DWORD, tuple<DWORD, DWORD, DWORD, BYTE>> leadingScorers;     // multimap<maxScore, tuple<maxPlayerID, teamID, year, week>>
+
     loadFranchiseInfo(franchiseDirectory, franchiseMap);
 
 
     unordered_map<DWORD, pair<string, Position>> playerMap;
 
-    loadWeeklyResults(franchiseDirectory, playerMap);
+    loadWeeklyResults(franchiseDirectory, playerMap, leadingScorers);
 
 
     // Generate reports
 
     cout << endl;
+
+//    generateHighestPlayerScores(franchiseDirectory, playerMap, leadingScorers);
+
+    generateKickerScoring(franchiseDirectory, playerMap);
 
     for (int teamID = 1; teamID <=16; teamID++)
     { 
@@ -109,8 +124,6 @@ int main()
 
     return 0;
 }
-
-
 
 
 void loadFranchiseInfo(franchiseData** franchiseDirectory, unordered_map<string, int> &franchiseMap)
@@ -143,9 +156,11 @@ void loadFranchiseInfo(franchiseData** franchiseDirectory, unordered_map<string,
 
 
 
-void loadWeeklyResults(franchiseData** franchiseDirectory, unordered_map<DWORD, pair<string, Position>> &playerMap)
+void loadWeeklyResults(franchiseData** franchiseDirectory, unordered_map<DWORD, pair<string, Position>> &playerMap,
+    multimap<DWORD, tuple<DWORD, DWORD, DWORD, BYTE>> &leadingScorers)
 {
     pugi::xml_parse_result resultXML;
+
 
     for (int year = YEAR_0; year <= YEAR_N; year++)
     {
@@ -210,6 +225,9 @@ void loadWeeklyResults(franchiseData** franchiseDirectory, unordered_map<DWORD, 
 
                     DWORD maxScore = 0;
                     DWORD maxPlayerID = -1;
+                    DWORD maxStarterScore = 0;
+                    DWORD maxStarterID = -1;
+
                     BOOL maxPointsOnBench = false;
 
                     for (pugi::xml_node playerNode = franchiseNode.first_child(); playerNode; playerNode = playerNode.next_sibling())
@@ -217,13 +235,19 @@ void loadWeeklyResults(franchiseData** franchiseDirectory, unordered_map<DWORD, 
                         DWORD playerScore = atoi(playerNode.attribute("score").value());
                         DWORD playerID = atoi(playerNode.attribute("id").value());
 
-                        if (playerScore > maxScore)
+                        if (playerScore >= maxScore)
                         {
                             maxPlayerID = playerID;
                             maxScore = playerScore;
 
-                            if (!strcmp(playerNode.attribute("status").value(), "nonstarter"))
+                            if (!strcmp(playerNode.attribute("status").value(), "starter"))
+                            {
+                                maxStarterID = playerID;
+                                maxStarterScore = playerScore;
+                            }
+                            else
                                 maxPointsOnBench = true;
+                            
                         }
 
                         if (!strcmp(playerNode.attribute("status").value(), "starter"))
@@ -242,8 +266,20 @@ void loadWeeklyResults(franchiseData** franchiseDirectory, unordered_map<DWORD, 
                             posScoringHist->starts++;
 
                             franchiseDirectory[teamID]->numStarts[starterPos]++;
+
+                            if (playerScore > 24)
+                                leadingScorers.insert({ maxScore, make_tuple(playerID, teamID, year, week) });
+
                         }
 
+                    }
+
+                    if (playerMap[maxStarterID].second == Position::PK)
+                    {
+                        franchiseDirectory[teamID]->kickerLeadingScorer++;
+
+                        if (maxStarterScore >= get<0>(franchiseDirectory[teamID]->bestKickerScore))
+                            franchiseDirectory[teamID]->bestKickerScore = make_tuple(maxStarterScore, maxStarterID, year, week);
                     }
 
                     if (maxPointsOnBench)
@@ -265,6 +301,70 @@ void loadWeeklyResults(franchiseData** franchiseDirectory, unordered_map<DWORD, 
     }
 
 }
+
+void generateHighestPlayerScores(franchiseData** franchiseDirectory, unordered_map<DWORD, pair<string, Position>> &playerMap, multimap<DWORD, tuple<DWORD, DWORD, DWORD, BYTE>> &leadingScorers)
+{
+    cout << " Best scores by a single player (2013-2018)" << endl;
+    cout << " ===============================================================================================" << endl;
+    cout << " Score\t" << left << setw(30) << "Player" << setw(24) << "Team" << "Week" << endl;
+
+    for (multimap<DWORD, tuple<DWORD, DWORD, DWORD, BYTE>>::reverse_iterator itMultimap = leadingScorers.rbegin(); itMultimap != leadingScorers.rend(); itMultimap++)
+    {
+        DWORD score = itMultimap->first;
+        tuple<DWORD, DWORD, DWORD, BYTE> tupleLeadingScorer = itMultimap->second;
+
+        string playerName = playerMap[get<0>(tupleLeadingScorer)].first;
+        string teamName = franchiseDirectory[get<1>(tupleLeadingScorer)]->franchiseName;
+        DWORD year = get<2>(tupleLeadingScorer);
+        DWORD week = get<3>(tupleLeadingScorer);
+
+        cout << " " << score << "\t" << left << setw(30) << playerName << setw(24) << teamName << year << " - week " << week << endl;
+
+    }
+
+}
+
+
+void generateKickerScoring(franchiseData** franchiseDirectory, unordered_map<DWORD, pair<string, Position>> &playerMap)
+{
+
+    std::multimap<DWORD, DWORD> highKickerRank;
+
+    for (int teamID = 1; teamID <= 16; teamID++)
+    {
+        DWORD numTimes = franchiseDirectory[teamID]->kickerLeadingScorer;
+        highKickerRank.insert({ numTimes, teamID });
+    }
+
+
+    cout << " Most weeks with Kicker as leading scorer (2013-2018)" << endl;
+    cout << " ===============================================================================================" << endl;
+    cout << " Rank\t" << left << setw(24) << "Team" << setw(22) << "# weeks (out of 84)" << setw(24) << "Best K score" << setw(10) << "Points" << "Week" << endl;
+
+
+    DWORD rank = 1;
+
+    for (std::multimap<DWORD, DWORD>::reverse_iterator itMultimap = highKickerRank.rbegin(); itMultimap != highKickerRank.rend(); itMultimap++)
+    {
+        franchiseData* franchisePtr = franchiseDirectory[itMultimap->second];
+
+        DWORD score = get<0>(franchisePtr->bestKickerScore);
+        string playerName = playerMap[get<1>(franchisePtr->bestKickerScore)].first;
+        DWORD year = get<2>(franchisePtr->bestKickerScore);
+        DWORD week = get<3>(franchisePtr->bestKickerScore);
+
+        cout << " " << rank << "\t" << left << setw(30) << franchisePtr->franchiseName << setw(16) << franchisePtr->kickerLeadingScorer
+            << setw(24) << playerName << setw(10) << score << year << " - week " << week << endl;
+
+        rank++;
+    }
+
+    cout << endl << endl;
+
+
+}
+
+
 
 
 void generateTeamReport(franchiseData* franchisePtr, unordered_map<DWORD, pair<string, Position>> &playerMap)
@@ -359,6 +459,7 @@ void generateTeamReport(franchiseData* franchisePtr, unordered_map<DWORD, pair<s
     }
 
     cout << endl << endl << endl << endl;
+
 
 
 }
